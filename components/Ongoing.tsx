@@ -97,7 +97,7 @@ function OngoingCard({ item, index }: { item: typeof ONGOING[0]; index: number }
             className="font-mono text-xs px-2 py-0.5"
             style={{
               background: 'rgba(68,50,35,0.06)',
-              color: 'var(--weathered)',
+              color: 'var(--black)',
               border: '1px solid rgba(68,50,35,0.1)',
             }}
           >
@@ -107,7 +107,7 @@ function OngoingCard({ item, index }: { item: typeof ONGOING[0]; index: number }
       </div>
 
       {/* Description */}
-      <p className="font-sans text-sm leading-relaxed mb-8" style={{ color: 'var(--weathered)' }}>
+      <p className="font-sans text-sm leading-relaxed mb-8" style={{ color: 'var(--black)' }}>
         {item.description}
       </p>
 
