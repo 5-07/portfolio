@@ -1,0 +1,372 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,200;1,9..40,300&display=swap');
+
+:root {
+  --linen: #FFF9F3;
+  --latte: #DBC4A5;
+  --clockwork: #72583E;
+  --cedar: #7C7960;
+  --deep-olive: #44422D;
+  --cafe-noir: #443223;
+  --mauve: #755151;
+  --weathered: #A08670;
+  --black: #0A0A0A;
+  --white: #FAFAFA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles this */
+}
+
+body {
+  background: var(--linen);
+  color: var(--cafe-noir);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ─── CUSTOM CURSOR ─── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cafe-noir);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease, transform 0.1s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--cafe-noir);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease, background 0.3s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-ring.hover {
+  width: 70px;
+  height: 70px;
+  background: rgba(113, 88, 62, 0.1);
+}
+
+/* ─── GRAIN OVERLAY ─── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px;
+  animation: grain 0.5s steps(2) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -3%); }
+  30% { transform: translate(3%, 2%); }
+  50% { transform: translate(-1%, 4%); }
+  70% { transform: translate(4%, -1%); }
+  90% { transform: translate(-3%, 3%); }
+}
+
+/* ─── LOADER ─── */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 9997;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-curtain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--linen);
+  transition: height 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ─── TYPOGRAPHY ─── */
+.font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+.font-mono { font-family: 'Space Mono', monospace; }
+.font-sans { font-family: 'DM Sans', sans-serif; }
+
+.exhibition-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.section-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  opacity: 0.4;
+}
+
+/* ─── HORIZONTAL SCROLL GALLERY ─── */
+.h-scroll-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.h-scroll-track {
+  display: flex;
+  gap: 2rem;
+  will-change: transform;
+}
+
+/* ─── GALLERY CARD ─── */
+.gallery-card {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: none;
+}
+
+.gallery-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(68, 50, 35, 0.15);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gallery-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-frame img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-card:hover .gallery-frame img {
+  transform: scale(1.05);
+}
+
+/* ─── PLACARD ─── */
+.placard {
+  background: var(--linen);
+  border: 1px solid var(--latte);
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+
+.placard::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: 10px;
+  right: 10px;
+  height: 4px;
+  background: var(--clockwork);
+}
+
+/* ─── MARQUEE ─── */
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 25s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── SCANLINE ─── */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── SECTION TRANSITIONS ─── */
+.section-enter {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--linen); }
+::-webkit-scrollbar-thumb { background: var(--latte); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--clockwork); }
+
+/* ─── SELECTION ─── */
+::selection {
+  background: var(--latte);
+  color: var(--cafe-noir);
+}
+
+/* ─── GLITCH ─── */
+@keyframes glitch {
+  0%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+  10% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 1px); }
+  20% { clip-path: inset(40% 0 30% 0); transform: translate(2px, -1px); }
+  30% { clip-path: inset(70% 0 10% 0); transform: translate(-1px, 2px); }
+  40% { clip-path: inset(20% 0 70% 0); transform: translate(1px, -2px); }
+  50% { clip-path: inset(60% 0 20% 0); transform: translate(-2px, 1px); }
+  60% { clip-path: inset(0% 0 80% 0); transform: translate(2px, -1px); }
+  70% { clip-path: inset(80% 0 5% 0); transform: translate(0); }
+}
+
+/* ─── BLINK ─── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink { animation: blink 1s step-end infinite; }
+
+/* ─── VIDEO OVERLAY ─── */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.3) 0%,
+    rgba(10, 10, 10, 0.1) 50%,
+    rgba(10, 10, 10, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+/* ─── NAV ─── */
+.nav-link {
+  position: relative;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after { width: 100%; }
+
+/* ─── TIMELINE ─── */
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--latte) 10%, var(--latte) 90%, transparent);
+}
+
+/* ─── LIGHTBOX ─── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.95);
+  z-index: 9995;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar-fill {
+  height: 100%;
+  background: var(--clockwork);
+  transition: width 1s ease;
+}
+
+/* ─── UTILS ─── */
+.text-balance { text-wrap: balance; }
+
+.clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.clip-reveal.visible {
+  clip-path: inset(0% 0 0 0);
+}
+
+/* ─── DARK SECTION ─── */
+.section-dark {
+  background: var(--cafe-noir);
+  color: var(--linen);
+}
+
+.section-olive {
+  background: var(--deep-olive);
+  color: var(--linen);
+}
+
+.section-mauve {
+  background: var(--mauve);
+  color: var(--linen);
+}
+
+/* ─── HOVER REVEAL ─── */
+.hover-reveal {
+  overflow: hidden;
+  position: relative;
+}
+
+.hover-reveal-inner {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-reveal:hover .hover-reveal-inner {
+  transform: translateY(-100%);
+}
