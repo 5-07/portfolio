@@ -1,24 +1,13 @@
+
 # Muzaina Munir — Portfolio
 
-An editorial art gallery-themed portfolio built with Next.js, Framer Motion, GSAP, and Lenis.
+> Artist & Engineer · Creative Technologist · Karachi, PK
 
----
+A digital art gallery built to live at the intersection of code and canvas. Designed like a Guggenheim exhibition — each section a room, each project a work on the wall.
 
-## 🚀 Quick Start
+Built with Next.js, Framer Motion, GSAP, and Lenis.
 
-### 1. Install dependencies
-```bash
-npm install
-```
 
-### 2. Run development server
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
 
 
 ```
@@ -31,12 +20,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
       artwork-001.jpg       ←  artwork
       artwork-002.jpg
   /videos/
-    hero-bg.mp4             ← Optional: looping video for hero
+    hero-bg.mp4             
 ```
-
-### Hero Video (Optional)
-Download a free abstract art loop from [Pexels](https://www.pexels.com/search/videos/abstract%20art/) and save as `/public/videos/hero-bg.mp4`. The hero still looks great without it (gradient fallback is included).
-
 
 
 ## 🎨 Color Palette
@@ -54,47 +39,6 @@ Download a free abstract art loop from [Pexels](https://www.pexels.com/search/vi
 
 ---
 
-## 🌐 Deploy to Vercel
-
-### Option A — Vercel CLI (recommended)
-```bash
-npm install -g vercel
-vercel
-```
-Follow the prompts. Done ✓
-
-### Option B — GitHub + Vercel Dashboard
-1. Push this project to a GitHub repo
-2. Go to [vercel.com](https://vercel.com) → New Project
-3. Import your GitHub repo
-4. Click Deploy — Vercel auto-detects Next.js
-
----
 
 
 
----
-
-## 📋 All Terminal Commands
-
-```bash
-# Install
-npm install
-
-# Dev
-npm run dev
-
-# Build (test before deploy)
-npm run build
-npm run start
-
-# Deploy
-npx vercel
-
-# Deploy to production
-npx vercel --prod
-```
-
----
-
-Built with 🎨 by Muzaina Munir
