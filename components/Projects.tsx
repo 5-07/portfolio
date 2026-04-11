@@ -1,26 +1,17 @@
 'use client';
-import { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
-/*
-  ═══════════════════════════════════════════════════════════════
-  YOUR PROJECTS — Edit this array with your real projects
-  For each project:
-  - image: add your screenshot to /public/images/ and update the path
-    OR use the placeholder (a colored div will show)
-  - Replace all placeholder text with your actual project details
-  ═══════════════════════════════════════════════════════════════
-*/
 const PROJECTS = [
   {
     id: '01',
     title: 'Sweeten',
-    subtitle: '[YOUR PROJECT NAME]',
-    description: 'Diabetes Management app to counter Pakistans lack of accessible management fascilities for ost of the population that is diagnosed with Type 2 Diabetes. Provides Research-backed feedback based on user vitals. Currently in the process of real Patients testing and mentoring with the support of the Primary Care Diabetes Association Pakistan, Members of the WHO Diabetes Forum.',
-    tech: ['React', 'Node.js', 'PostgreSQL'],
-    medium: 'Full-Stack Web Application',
+    subtitle: '',
+    description: 'A research-driven digital health system investigating how hybrid AI and deterministic architectures can deliver safe, personalized diabetes support under real-world constraints. Built on a failure-first design philosophy — fully functional and interpretable even when AI is unavailable. Grounded in ADA clinical guidelines. Currently in patient testing with support from the Primary Care Diabetes Association Pakistan and members of the WHO Diabetes Forum.',
+    tech: ['Next.js', 'TypeScript', 'Firebase', 'Gemini API', 'Tailwind CSS'],
+    medium: 'Research System / Full-Stack Web Application',
     year: '2025',
     link: 'https://sweeten-3aa2.vercel.app/',
     image: '/images/sweeten landing.jpeg',
@@ -30,43 +21,43 @@ const PROJECTS = [
   },
   {
     id: '02',
-    title: 'Spidex',
-    subtitle: '[YOUR PROJECT NAME]',
-    description: 'Built for the Headstarter Fellowship hiring hackathon based on criteria set by Olostep. Worked with a team of international professionals and had the opportunity to be mentored and network for people from across the world. Received immense positive feedback upon pitching/',
-    tech: ['React', 'Node.js', 'Python'],
-    medium: 'Full-Stack Web Application',
-    year: '2024',
-    link: 'https://github.com/kambohdiv/Olostep-webscraper',
+    title: 'Gender Bias in Profession Classification',
+    subtitle: '',
+    description: 'Counterfactual evaluation of a DistilBERT profession classifier using the Bias in Bios dataset. Measures how swapping gendered language markers in professional biographies changes model predictions and confidence scores — across 28 professions and STEM vs. Non-STEM categories. Produces two bias metrics: flip rate and confidence shift.',
+    tech: ['Python', 'PyTorch', 'HuggingFace Transformers', 'DistilBERT', 'seaborn'],
+    medium: 'NLP Research / Bias Evaluation',
+    year: '2025',
+    link: 'https://github.com/5-07/Gender-Bias-Project',
     image: '/images/spidex landing.jpeg',
-    imageAlt: 'spidex screenshot',
+    imageAlt: 'Gender bias project',
     accent: 'var(--mauve)',
     bg: '#e8d9d9',
   },
   {
     id: '03',
-    title: 'Trajectory.AI',
+    title: 'Spidex',
     subtitle: '',
-    description: 'A career pathway generator with an integrated resume parser to give a user the exact pathway for ideal career options based on their experiences. Designed for confused students.',
-    tech: ['Python', 'TensorFlow', 'React'],
-    medium: 'Machine Learning / AI',
+    description: 'High-performance web scraper built for Olostep during the Headstarter Fellowship hiring hackathon. Selected as a finalist from dozens of international teams. Built collaboratively with engineers across multiple countries under mentorship from professionals at major technology companies.',
+    tech: ['React', 'Node.js', 'Python'],
+    medium: 'Full-Stack Web Application',
     year: '2024',
-    link: 'https://github.com/michaelvdang/trajectory',
-    image: '/images/traj landing.jpeg',
-    imageAlt: 'trajectory screenshot',
+    link: 'https://github.com/kambohdiv/Olostep-webscraper',
+    image: '/images/spidex landing.jpeg',
+    imageAlt: 'Spidex screenshot',
     accent: 'var(--cedar)',
     bg: '#d9e0d4',
   },
   {
     id: '04',
-    title: 'Hackpocalypse Website',
+    title: 'Trajectory.AI',
     subtitle: '',
-    description: 'Built for my Schools coding societys first inter-school hackathon',
-    tech: ['React Native', 'Firebase'],
-    medium: 'Web Application',
-    year: '2025',
-    link: 'https://github.com/5-07/hackpocalypse',
-    image: '/images/hackpoc.jpg',
-    imageAlt: ' screenshot',
+    description: 'A career pathway generator with an integrated resume parser that produces personalized career options based on a user\'s experiences and skills. Designed for students navigating uncertain paths.',
+    tech: ['Python', 'TensorFlow', 'React'],
+    medium: 'Machine Learning / AI',
+    year: '2024',
+    link: 'https://github.com/michaelvdang/trajectory',
+    image: '/images/traj landing.jpeg',
+    imageAlt: 'Trajectory screenshot',
     accent: 'var(--deep-olive)',
     bg: '#d8d5c8',
   },
@@ -74,13 +65,13 @@ const PROJECTS = [
     id: '05',
     title: 'Daydream Karachi',
     subtitle: '',
-    description: 'Built to manage sign ups for Daydream Karachi, a GameJam/Hackathon hosted by our coding society, funded by Hack Club. Garnered over 700+ sign ups from all over Karachi.',
-    tech: [],
-    medium: '',
+    description: 'Registration platform for Daydream Karachi, a Game Jam and Hackathon hosted by Cedar Codes and funded by Hack Club. Garnered over 700 sign-ups from across Karachi.',
+    tech: ['Next.js', 'TypeScript'],
+    medium: 'Web Application',
     year: '2025',
     link: 'https://daydream.hackclub.com/karachi',
     image: '/images/daydream.jpg',
-    imageAlt: 'daydream screenshot',
+    imageAlt: 'Daydream Karachi screenshot',
     accent: 'var(--cafe-noir)',
     bg: '#ccc4ba',
   },
@@ -111,17 +102,12 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          /* Placeholder — replace with real screenshot */
           <div className="w-full h-full flex flex-col items-center justify-center p-8" style={{ background: project.bg }}>
             <div
               className="font-display mb-3"
               style={{ fontSize: '4rem', color: project.accent, opacity: 0.3, lineHeight: 1 }}
             >
               {project.id}
-            </div>
-            <div className="font-mono text-xs tracking-widest text-center opacity-40" style={{ color: project.accent }}>
-              [ ADD YOUR SCREENSHOT ]<br />
-              /public/images/project-{project.id}.jpg
             </div>
           </div>
         )}
@@ -169,6 +155,8 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
           </div>
           <a
             href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-mono text-xs tracking-widest px-3 py-1.5 transition-colors hover:opacity-70"
             style={{
               border: `1px solid ${project.accent}`,
