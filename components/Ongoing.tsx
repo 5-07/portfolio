@@ -2,26 +2,18 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-/*
-  ═══════════════════════════════════════════════════════════════
-  YOUR ONGOING PROJECTS — Replace with your current work
-  progress: 0-100
-  status: 'Active', 'Paused', 'Exploring', 'Shipping Soon'
-  ═══════════════════════════════════════════════════════════════
-*/
 const ONGOING = [
   {
     id: 'WIP-001',
-    title: 'Bias Detection via Counterfactuals',
-    category: 'Research / Development',
-    description: 'Building a machine learning framework to detect bias by generating counterfactual variations of input data and analyzing changes in model predictions. The approach isolates the impact of sensitive attributes by keeping all other factors constant, enabling targeted bias evaluation. A functional prototype has been developed, demonstrating the core methodology. Further experimentation and large-scale validation are currently limited by hardware constraints, with planned improvements focused on optimization and expanded testing.',
-    progress: 65,
+    title: 'Sweeten — Clinical Validation',
+    category: 'Research / Digital Health',
+    description: 'Extending Sweeten into a clinician-validated study. Current phase involves real patient testing in collaboration with the Primary Care Diabetes Association Pakistan and members of the WHO Diabetes Forum. Research focus: evaluating whether hybrid AI + deterministic plan outputs align with clinician recommendations, and adapting ADA thresholds for South Asian metabolic profiles.',
+    progress: 45,
     status: 'Active',
-    tags: ['React', 'AI/ML', 'Design'],
+    tags: ['Next.js', 'Firebase', 'Gemini API', 'Clinical Research'],
     startDate: 'Jan 2025',
-    accent: 'var(--cedar)',
+    accent: 'var(--clockwork)',
   },
-
 ];
 
 const STATUS_COLORS: Record<string, string> = {
@@ -176,7 +168,6 @@ export default function Ongoing() {
             <em style={{ color: 'var(--latte)' }}>Building</em>
           </motion.h2>
 
-          {/* Y2K under construction badge */}
           <motion.div
             className="flex items-center gap-3 px-4 py-2"
             style={{
