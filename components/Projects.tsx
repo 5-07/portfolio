@@ -28,7 +28,7 @@ const PROJECTS = [
     medium: 'NLP Research / Bias Evaluation',
     year: '2025',
     link: 'https://github.com/5-07/Gender-Bias-Project',
-    image: '/images/spidex landing.jpeg',
+    image: '',
     imageAlt: 'Gender bias project',
     accent: 'var(--mauve)',
     bg: '#e8d9d9',
