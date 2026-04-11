@@ -7,7 +7,7 @@ import Image from 'next/image';
 const STATS = [
   { value: '5+', label: 'Years Creating' },
   { value: '20+', label: 'Projects Shipped' },
-  { value: '3', label: 'Competitions Won' },
+  { value: '5+', label: 'Competitions & Awards' },
   { value: '∞', label: 'Ideas Brewing' },
 ];
 
@@ -58,7 +58,6 @@ export default function About() {
                 transform: 'rotate(-1.5deg)',
               }}
             >
-              
               <div
                 className="w-full aspect-[3/4] flex items-center justify-center"
                 style={{ background: 'var(--latte)', minHeight: 400 }}
@@ -106,28 +105,18 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div>
                 <p className="font-sans leading-relaxed mb-4" style={{ color: 'var(--clockwork)', fontSize: '1rem' }}>
-                  {/* ═══════════════════════════════════════════════════
-                      YOUR BIO — Paragraph 1
-                      Replace with your own text
-                      ═══════════════════════════════════════════════════ */}
-                  I&apos;m a creative technologist based in Karachi, Pakistan — equal parts engineer and artist. I design and build digital experiences that feel human, strange, and alive.
+                  I&apos;m a researcher and engineer based in Karachi, Pakistan — working at the intersection of AI systems, digital health, and algorithmic fairness. I design and build things that are rigorous, interpretable, and human.
                 </p>
                 <p className="font-sans leading-relaxed" style={{ color: 'var(--weathered)', fontSize: '0.95rem' }}>
-                  {/* ═══════════════════════════════════════════════════
-                      YOUR BIO — Paragraph 2
-                      ═══════════════════════════════════════════════════ */}
-                  My work spans full-stack development, generative art, interactive installations, and whatever I haven&apos;t tried yet. I believe the best interfaces are the ones that make you feel something.
+                  My research explores how AI systems behave under real-world constraints — when data is sparse, infrastructure is limited, or decisions carry consequences. I care about building systems that remain reliable and explainable even when conditions aren&apos;t ideal.
                 </p>
               </div>
               <div>
                 <p className="font-sans leading-relaxed mb-4" style={{ color: 'var(--clockwork)', fontSize: '1rem' }}>
-                  {/* ═══════════════════════════════════════════════════
-                      YOUR BIO — Paragraph 3
-                      ═══════════════════════════════════════════════════ */}
-                  Currently doing my A Levels at Cedar College, where I explore the edges of what technology can look like when it&apos;s treated as a medium rather than just a tool.
+                  Alongside research, I&apos;m an artist — acrylic on canvas, generative systems, interactive installations. I believe the discipline of making art and the discipline of making software ask the same question: what does this need to be?
                 </p>
                 <p className="font-sans leading-relaxed" style={{ color: 'var(--weathered)', fontSize: '0.95rem' }}>
-                  When not coding or painting, you&apos;ll find me in exhibitions, reading about design history, or building things nobody asked for.
+                  Currently completing my A Levels at Cedar College, Karachi, and building toward graduate research in AI.
                 </p>
               </div>
             </div>
