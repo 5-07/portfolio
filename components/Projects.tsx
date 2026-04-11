@@ -9,7 +9,7 @@ const PROJECTS = [
     id: '01',
     title: 'Sweeten',
     subtitle: '',
-    description: 'A research-driven digital health system investigating how hybrid AI and deterministic architectures can deliver safe, personalized diabetes support under real-world constraints. Built on a failure-first design philosophy — fully functional and interpretable even when AI is unavailable. Grounded in ADA clinical guidelines. Currently in patient testing with support from the Primary Care Diabetes Association Pakistan and members of the WHO Diabetes Forum.',
+    description: 'A research-driven digital health system investigating how hybrid AI and deterministic architectures can deliver safe, personalized diabetes support under real-world constraints. Built on a failure-first design philosophy — fully functional and interpretable even when AI is unavailable. Grounded in ADA clinical guidelines. Currently awaiting patient testing with support from the Primary Care Diabetes Association Pakistan and members of the WHO Diabetes Forum.',
     tech: ['Next.js', 'TypeScript', 'Firebase', 'Gemini API', 'Tailwind CSS'],
     medium: 'Research System / Full-Stack Web Application',
     year: '2025',
