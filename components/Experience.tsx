@@ -2,12 +2,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-/*
-  ═══════════════════════════════════════════════════════════════
-  YOUR EXPERIENCE — Replace with your actual positions
-  type: 'work' | 'education' | 'volunteer'
-  ═══════════════════════════════════════════════════════════════
-*/
 const EXPERIENCE = [
   {
     id: '01',
@@ -15,7 +9,7 @@ const EXPERIENCE = [
     org: 'Cedar Codes',
     period: '2024 — Present',
     type: 'work',
-    description: 'Awarded the position by Cedar Enrichment Program based on Academic and Extracurricular Rigor. Hosted many successful events with upto 90% project ship rates from participants and mentored juniors. Learned hoe to collaborate within a team and give and recieve input to get opinions across.',
+    description: 'Awarded the position by Cedar Enrichment Program based on academic and extracurricular rigor. Hosted multiple successful events with up to 90% project ship rates from participants and mentored junior members. Built collaborative workflows and developed skills in team management, recruitment, and structured feedback.',
     skills: ['Leadership', 'Management', 'Event Planning', 'Recruitment', 'Networking'],
     current: true,
   },
@@ -23,30 +17,30 @@ const EXPERIENCE = [
     id: '02',
     role: 'AI SWE Fellow',
     org: 'Headstarter',
-    period: 'June - Aug 2024',
+    period: 'June – Aug 2024',
     type: 'work',
-    description: 'Selected from a global pool of over 40,000 applicants, I collaborated within an international team under mentorship from professionals at major technology companies. This experience refined my ability to work in high-performing, distributed teams while building scalable technical solutions. I developed a stronger understanding of end-to-end product development, from ideation to deployment, and learned how to communicate technical ideas effectively in collaborative environments. Exposure to industry mentors also shaped my perspective on building impactful, user-focused technology',
-    skills: ['Python', 'Data Analysis', 'APIs','Collaboration','Web App Development', 'Leadership'],
+    description: 'Selected from a global pool of over 40,000 applicants. Collaborated within an international team under mentorship from professionals at major technology companies. Refined end-to-end product development skills from ideation to deployment, and developed the ability to communicate technical ideas effectively in high-performing, distributed environments.',
+    skills: ['Python', 'Data Analysis', 'APIs', 'Collaboration', 'Web App Development', 'Leadership'],
     current: false,
   },
   {
     id: '03',
     role: 'Social Intern',
-    org: 'Foundation fighting Poverty',
+    org: 'Foundation Fighting Poverty',
     period: '2025',
     type: 'volunteer',
-    description: 'Completed a social internship with the Foundation Fighting Poverty (FFP), contributing to fundraising and outreach initiatives aimed at supporting financially vulnerable communities through structured campaigns and resource distribution efforts.I supported campaign strategy, donor outreach, and content creation, using digital platforms to expand visibility and engagement. I leveraged my design background, including my Instagram magazine Pehchan, to create targeted content that increased reach and participation. I also assisted in coordinating fundraising efforts and organizing donation logistics for on-ground distribution',
+    description: 'Contributed to fundraising and outreach initiatives supporting financially vulnerable communities. Supported campaign strategy, donor outreach, and content creation using digital platforms to expand visibility and engagement. Coordinated fundraising efforts and organized donation logistics for on-ground distribution.',
     skills: ['Leadership', 'Events', 'Community'],
     current: false,
   },
   {
     id: '04',
     role: 'Head Girl',
-    org: 'Roots Intternational School',
+    org: 'Roots International School',
     period: '2024',
     type: 'work',
-    description: 'Elected Head Girl of Roots International , serving as the primary student representative while actively participating in competitive debate and public speaking. Represented the institution at multiple inter-school and international forums in Karachi, contributing to discussions on finance, health, youth, and technology. As Head Girl, I served as the link between the student body and administration, leading student initiatives, organizing events, and representing collective student interests. Alongside this, I participated in debates and forums as a speaker presenting perspectives on complex, real-world issues. I consistently represented the school in external engagements, collaborating with diverse groups and institutions.',
-    skills: ['Communication', 'Public Speaking', 'Debate', 'Critical Thinking','Leadership'],
+    description: 'Elected Head Girl, serving as the primary student representative and link between the student body and administration. Led student initiatives, organized events, and represented the institution at multiple inter-school and international forums in Karachi — contributing to discussions on finance, health, youth, and technology. Participated in competitive debate and public speaking across diverse collaborative settings.',
+    skills: ['Communication', 'Public Speaking', 'Debate', 'Critical Thinking', 'Leadership'],
     current: false,
   },
 ];
