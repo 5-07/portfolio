@@ -65,7 +65,7 @@ export default function Nav({ visible }: { visible: boolean }) {
                 </button>
               ))}
             </div>
-
+<a
 {/* Status + Hire Me */}
 <div className="hidden md:flex items-center gap-4">
   
