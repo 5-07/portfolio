@@ -72,7 +72,7 @@ function ServiceCard({ service, index }: { service: typeof SERVICES[0]; index: n
         <span className="font-display text-xl" style={{ color: service.accent }}>
           {service.price}
         </span>
-        
+        <a
           href="https://wa.me/92XXXXXXXXXX?text=Hi%20Muzaina%2C%20I%27m%20interested%20in%20your%20services."
           target="_blank"
           rel="noopener noreferrer"
@@ -124,7 +124,7 @@ export default function Services() {
             <p className="font-sans text-sm max-w-xs mb-3" style={{ color: 'rgba(219,196,165,0.5)' }}>
               Usually reply within 24 hours. Let&apos;s build something together.
             </p>
-            
+            <a
               href="https://wa.me/92XXXXXXXXXX?text=Hi%20Muzaina%2C%20I%27d%20like%20to%20discuss%20a%20project."
               target="_blank"
               rel="noopener noreferrer"
