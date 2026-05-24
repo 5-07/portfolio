@@ -77,7 +77,7 @@ export default function Contact() {
   animate={inView ? { opacity: 1 } : {}}
   transition={{ delay: 0.45 }}
 >
-  
+<a  
     href={`mailto:${CONTACT.email}`}
     className="font-mono text-xs px-6 py-3 transition-opacity hover:opacity-70"
     style={{ border: '1px solid rgba(255,249,243,0.3)', color: 'var(--linen)', letterSpacing: '0.1em' }}
