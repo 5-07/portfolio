@@ -66,13 +66,28 @@ export default function Nav({ visible }: { visible: boolean }) {
               ))}
             </div>
 
-            {/* Status indicator */}
-            <div className="hidden md:flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              <span className="font-mono text-xs" style={{ color: 'var(--clockwork)', opacity: 0.6 }}>
-                Available for work
-              </span>
-            </div>
+{/* Status + Hire Me */}
+<div className="hidden md:flex items-center gap-4">
+  
+    href="https://wa.me/92XXXXXXXXXX?text=Hi%20Muzaina%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-mono text-xs px-4 py-2 transition-all hover:opacity-80"
+    style={{
+      background: 'var(--clockwork)',
+      color: 'var(--linen)',
+      letterSpacing: '0.1em',
+    }}
+  >
+    HIRE ME →
+  </a>
+  <div className="flex items-center gap-2">
+    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+    <span className="font-mono text-xs" style={{ color: 'var(--clockwork)', opacity: 0.6 }}>
+      Available
+    </span>
+  </div>
+</div>
 
             {/* Mobile hamburger */}
             <button
