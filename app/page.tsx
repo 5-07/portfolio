@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Services from '@/components/Services';
 
 // Dynamic imports for client components
 const Cursor = dynamic(() => import('@/components/Cursor'), { ssr: false });
